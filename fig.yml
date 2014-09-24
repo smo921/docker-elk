@@ -1,0 +1,17 @@
+elasticsearch:
+  image: dockerfile/elasticsearch
+  ports:
+    - '9200:9200'
+  volumes:
+    - ./elasticsearch/:/data/
+  command: /elasticsearch/bin/elasticsearch -Des.config=/data/elasticsearch.yml
+kibana:
+  image: arcus/kibana
+  ports:
+    - '8088:80'
+logstash:
+  image: smo921/logstash
+  environment:
+    ES_CONTAINER: elasticsearch
+  links:
+    - elasticsearch:es
