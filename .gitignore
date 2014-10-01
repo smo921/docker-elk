@@ -1,1 +1,3 @@
 elasticsearch/plugins/
+elasticsearch/data/
+elasticsearch/log/

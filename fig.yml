@@ -15,3 +15,6 @@ logstash:
     ES_CONTAINER: elasticsearch
   links:
     - elasticsearch:es
+  volumes:
+    - ./logstash/templates:/logstash-templates
+    - ./logstash/patterns:/logstash-patterns
