@@ -17,8 +17,7 @@ logstash:
     - elasticsearch:es
     - redis:redis
   volumes:
-    - ./logstash/templates:/logstash-templates
-    - ./logstash/patterns:/logstash-patterns
+    - ./logstash:/logstash.conf.d
 redis:
   image: redis
   ports:
